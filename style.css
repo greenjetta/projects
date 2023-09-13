@@ -1,57 +1,111 @@
-@import url('https://fonts.cdnfonts.com/css/common-pixel');
-                
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
-.magicball {
-    height: 600px;
-    width: 480px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
 }
-
 
 body {
-    background-image: url("starback.jpg") ;
-    background-size: 1950px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(to right, red 50%, white 50%);
 }
 
-
-.floating {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    margin-left: 30px;
-    margin-top: 5px;
+.container {
+    background: #fff;
+    width: 400px;
+    padding: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
 }
 
-@keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 35px); }
-    100%   { transform: translate(0, -0px);}   
+.stats {
+    text-align: right;
+    color: black;
+    font-weight: 500;
+    line-height: 25px;
+    font-weight: bold;
+
 }
 
-.input {
-    justify-content: center;
-    text-align: center;
+.coin{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin: 50px auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
-.generate-button {
-    justify-content: center;
-    text-align: center;
-    font-family: 'Common Pixel', sans-serif;
-    display: inline-block;
-                                                
-                                                
+.tails {
+    transform: rotateX('180deg');
+
 }
 
-.response {
-    text-align: center;
-    font-family: 'Common Pixel', sans-serif;
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coin img{
+    width: 145px;
+}
+.heads, .tails{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+button{
+    width: 120px;
+    padding: 10px 0;
+    border: 2.5px solid blue;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#flip-button {
+    background: blue;
     color: white;
-    height: 100px;
-                                                
+
 }
 
+#flip-button:disabled {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+#reset-button {
+    background: white;
+    color: blue;
+
+}
+
+@keyframes spin-tails{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+
+@keyframes spin-heads{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}

@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic 8 Ball</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
-    <script src="index.js"></script>             
+    <title>Coin Flip Game</title>
 </head>
-
-
-
 <body>
     <div class="container">
-        <div class="floating">
-            <div class="magicball">
-                <img src="magicballpx.png" alt="magic 8 ball">
+        <div class="stats">
+            <p id="heads-count">Heads: 0</p>
+            <p id="tails-count">Tails: 0</p>
+        </div>
+        <div class="coin" id="coin">
+            <div class="heads">
+                <img src="heads.svg" alt="heads of coin">
+            </div>
+            <div class="tails">
+                <img src="tails.svg" alt="tail side of coin">
             </div>
         </div>
-
-
-
-        <div class="response">
-            <p id="response"></p>
+        <div class="buttons">
+            <button id="flip-button">
+                Flip Coin!
+            </button>
+            <button id="reset-button">
+                Reset Coin!
+            </button>
         </div>
 
 
 
-        <div class="input">
-            <input id="input" placeholder="Ask me anything!">
-        </div>
-        
     </div>
     
-    <div class="generate-button">
-        <button id="generate-button" onclick="myFunction()"> Get Answer </button>
-    </div>
-   
+
+
+
+<script src="index.js"></script>
 </body>
 </html>

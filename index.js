@@ -1,22 +1,43 @@
-const answers = [
-    "It  is certain",
-    "Without a doubt",
-    "It is decidedly so",
-    "You may rely on it",
-    "Yes definitely",
-    "As I see it, yes.",
-    "Cannot predict right now.",
-    "Do not count on it.",
-    "My sources say no.",
-    "Ask again later.",
-    "Signs point to yes.",
-    "Outlook not so good."
-]
+let heads = 0;
+let tails = 0;
+let coin = document.querySelector(".coin");
+let flipBtn = document.querySelector("#flip-button");
+let resetBtn = document.querySelector("#reset-button");
 
-document.getElementById("response").innerHTML=answers
+flipBtn.addEventListener("click", ()=>{
+    let i = Math.floor(Math.random() * 2);
+    coin.style.animation = "none";
+    if(i){
+        setTimeout(function(){
+            coin.style.animation = "spin-heads 3s forwards";
+        }, 100);
+        heads++;
+    }else{
+        setTimeout(function(){
+            coin.style.animation = "spin-tails 3s forwards";
 
-function myFunction() {
-    answers.sort(function(a,b){return 0.5 - Math.random()});
-    document.getElementById("response").innerHTML=answers[0];
-    document.getElementById("response").style.fontSize="40px";
+        }, 100);
+        tails++;
+    }
+    setTimeout(updateStats, 3000);
+    disableButton();
+})
+function updateStats(){
+    document.querySelector("#heads-count").textContent = `Heads: ${heads}`;
+    document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
+    
 }
+
+function disableButton(){
+    flipBtn.disabled = true;
+    setTimeout(function () {
+        flipBtn.disabled = false;
+    }, 3000);
+}
+
+resetBtn.addEventListener("click", ()=>{
+    coin.style.animation = "none";
+    heads = 0;
+    tails = 0;
+    updateStats();
+})
