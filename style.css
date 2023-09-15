@@ -1,111 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
-}
-
-body {
-    height: 100%;
-    background: linear-gradient(to right, red 50%, white 50%);
-}
-
-.container {
-    background: #fff;
-    width: 400px;
-    padding: 50px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    box-shadow: 15px 30px 35px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    -webkit-perspective: 300px;
-    perspective: 300px;
-}
-
-.stats {
-    text-align: right;
-    color: black;
-    font-weight: 500;
-    line-height: 25px;
-    font-weight: bold;
+#game {
+    width: 900px;
+    height: 500px;
+    border: 4px solid black;
+    background-image: url("Pixel_Art_Background.jpg");
 
 }
 
-.coin{
-    height: 200px;
+#character {
     width: 200px;
+    height: 100px;
     position: relative;
-    margin: 50px auto;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    top: 285px;
 }
 
-.tails {
-    transform: rotateX('180deg');
-
+#police {
+    top: 100px;
+    left: 300px;
+    position: relative;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
+@keyframes jump {
+    0% {top: 285px}
+    30% {top: 10px}
+    70% {top: 250px}
+    100% {top: 285px}
 }
 
-.coin img{
-    width: 145px;
-}
-.heads, .tails{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+@keyframes coppers {
+    0% {left: 300px}
+    50% {left: -800px}
+    100% {left: -600px;}
 }
 
-button{
-    width: 120px;
-    padding: 10px 0;
-    border: 2.5px solid blue;
-    border-radius: 5px;
-    cursor: pointer;
-
+.animate {
+    animation: jump 500ms;
 }
 
-#flip-button {
-    background: blue;
-    color: white;
-
-}
-
-#flip-button:disabled {
-    background-color: white;
-    color: black;
-    border-color: white;
-}
-
-#reset-button {
-    background: white;
-    color: blue;
-
-}
-
-@keyframes spin-tails{
-    0%{
-        transform: rotateX(0);
-    }
-    100%{
-        transform: rotateX(1980deg);
-    }
-}
-
-@keyframes spin-heads{
-    0%{
-        transform: rotateX(0);
-    }
-    100%{
-        transform: rotateX(2160deg);
-    }
+.startGame {
+    animation: coppers 1s infinite;
 }

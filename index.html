@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onclick="jump()" ondblclick="startGame()">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Game</title>
     <link rel="stylesheet" href="style.css">
-    <title>Coin Flip Game</title>
 </head>
 <body>
-    <div class="container">
-        <div class="stats">
-            <p id="heads-count">Heads: 0</p>
-            <p id="tails-count">Tails: 0</p>
-        </div>
-        <div class="coin" id="coin">
-            <div class="heads">
-                <img src="heads.svg" alt="heads of coin">
-            </div>
-            <div class="tails">
-                <img src="tails.svg" alt="tail side of coin">
-            </div>
-        </div>
-        <div class="buttons">
-            <button id="flip-button">
-                Flip Coin!
-            </button>
-            <button id="reset-button">
-                Reset Coin!
-            </button>
+    <div id="game">
+        <div id="character">
+            <img src="8-Bit-Character-1.svg">
         </div>
 
+        <div id="police">
+            <img src="PixelartPoliceCar.svg">
+        </div>    
 
 
     </div>
+
+
     
 
 
 
-<script src="index.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
